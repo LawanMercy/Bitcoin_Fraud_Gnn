@@ -121,8 +121,8 @@ GraphSAGE with 3 convolutional layers, mean aggregation, BatchNorm, dropout (p=0
 
 ## Acknowledgements
 
-Dataset provided by Elliptic (https://www.elliptic.co). This project was completed as part of a fraud analytics internship and extended into independent research.
+Dataset provided by Elliptic (https://www.elliptic.co). This project was completed as part of a personal project and extended into independent research.
 
 ---
 
-*Author: [Your Name] · [Your Institution] · [Year]*
+*Author: [Opeyemi Mercy lawan] · [2026]*
