@@ -115,7 +115,8 @@ GraphSAGE with 3 convolutional layers, mean aggregation, BatchNorm, dropout (p=0
 1. Hamilton, W., Ying, Z., & Leskovec, J. (2017). *Inductive Representation Learning on Large Graphs*. NeurIPS.
 2. Weber, M. et al. (2019). *Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics*. KDD Workshop on Anomaly Detection in Finance.
 3. Elliptic (2019). *Elliptic Bitcoin Dataset*. Kaggle. https://www.kaggle.com/datasets/ellipticco/elliptic-data-set
-4. Kipf, T. N., & Welling, M. (2017). *Semi-Supervised Classification with Graph Convolutional Networks*. ICLR.
+4. https://www.kaggle.com/datasets/ellipticco/elliptic-data-set
+5. Kipf, T. N., & Welling, M. (2017). *Semi-Supervised Classification with Graph Convolutional Networks*. ICLR.
 
 ---
 
