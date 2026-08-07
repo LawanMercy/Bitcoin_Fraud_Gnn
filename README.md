@@ -3,7 +3,7 @@
 > **Detecting illicit transactions in the Elliptic Bitcoin dataset using GraphSAGE,  
 > temporal burst analysis, and graph-aware feature engineering.**
 >
-> *Opeyemi Mercy Lawan — 2025*
+> *Opeyemi Mercy Lawan — 2026*
 
 ---
 
@@ -11,16 +11,16 @@
 
 Financial crime on blockchain networks presents a unique detection challenge: transaction graphs are large (200k+ nodes), severely imbalanced (< 2% illicit among labelled nodes), and 77% of nodes carry no ground-truth label. Classical machine learning treats nodes independently, discarding the rich structural information encoded in *who transacts with whom*.
 
-This project applies **GraphSAGE** — an inductive graph neural network — to the Elliptic Bitcoin dataset, augmented with three families of hand-engineered graph features (structural centrality, temporal burst signals, and neighbourhood contagion scores). A temporal train/test split (steps 1–34 train, 35–49 test) ensures evaluation mirrors real-world deployment conditions.
+This project applies **GraphSAGE**: an inductive graph neural network to the Elliptic Bitcoin dataset, augmented with three families of hand-engineered graph features (structural centrality, temporal burst signals, and neighbourhood contagion scores). A temporal train/test split (steps 1–34 train, 35–49 test) ensures evaluation mirrors real-world deployment conditions.
 
 Key contributions:
-1. **Graph-aware feature engineering** — 16 new features across three families added to the original 165-dimensional Elliptic feature vector
-2. **GraphSAGE classifier** — 3-layer GNN with residual connections, BatchNorm, and class-weighted loss achieving AUC 0.957 and Recall 0.91
-3. **Unknown node labelling** — fraud probabilities assigned to 157,205 previously-unclassified wallets, identifying 88,234 as high-risk — a **1,971% increase** in detectable suspicious activity
-4. **Temporal burst detection** — z-score anomaly flagging identifies 6 statistically significant burst windows (steps 9, 13, 20, 28, 29, 32)
-5. **Propagation analysis** — illicit activity spreads to 35.57% of exposed nodes on average, peaking at 84% at time step 29
-6. **Interactive risk dashboard** — self-contained HTML with model gauges, network graph, burst chart, ranking table, and timeline
-7. **Compliance report** — non-technical stakeholder report covering highest-risk nodes, suspicious clusters, and actionable recommendations
+1. **Graph-aware feature engineering**: 16 new features across three families added to the original 165-dimensional Elliptic feature vector
+2. **GraphSAGE classifier**: 3-layer GNN with residual connections, BatchNorm, and class-weighted loss achieving AUC 0.957 and Recall 0.91
+3. **Unknown node labelling**: fraud probabilities assigned to 157,205 previously-unclassified wallets, identifying 88,234 as high-risk — a **1,971% increase** in detectable suspicious activity
+4. **Temporal burst detection**: z-score anomaly flagging identifies 6 statistically significant burst windows (steps 9, 13, 20, 28, 29, 32)
+5. **Propagation analysis**: illicit activity spreads to 35.57% of exposed nodes on average, peaking at 84% at time step 29
+6. **Interactive risk dashboard**: self-contained HTML with model gauges, network graph, burst chart, ranking table, and timeline
+7. **Compliance report**: non-technical stakeholder report covering highest-risk nodes, suspicious clusters, and actionable recommendations
 
 ---
 
@@ -66,7 +66,7 @@ bitcoin-fraud-gnn/
 │   └── model.py                     ← GraphSAGE model + Trainer class
 │
 ├── data/
-│   └── README.md                    ← Download instructions for Elliptic dataset
+│   └── README.md                    ← Brief explanation/download instructions for Elliptic dataset
 │
 ├── dashboard/
 │   └── Bitcoin_Network_Risk_Intelligence_Dashboard.html
@@ -79,7 +79,7 @@ bitcoin-fraud-gnn/
 
 ## Quickstart (Google Colab)
 
-All notebooks are designed to run on **Google Colab**. Notebooks 01, 02 and 04 run on free CPU. Notebook 03 benefits from a T4 GPU (Runtime → Change runtime type → T4 GPU).
+All notebooks were run on **Google Colab**. Notebooks 01, 02 and 04 run on free CPU. Notebook 03 benefits from a T4 GPU (Runtime → Change runtime type → T4 GPU).
 
 ### Step 1 — Get the data
 ```python
@@ -90,7 +90,7 @@ All notebooks are designed to run on **Google Colab**. Notebooks 01, 02 and 04 r
 import os
 os.makedirs(os.path.expanduser('~/.kaggle'), exist_ok=True)
 with open(os.path.expanduser('~/.kaggle/kaggle.json'), 'w') as f:
-    f.write('{"username":"YOUR_USERNAME","key":"YOUR_API_KEY"}')
+    f.write('{"username":"Lawanmessi","key":"MY API KEY"}')
 os.chmod(os.path.expanduser('~/.kaggle/kaggle.json'), 0o600)
 
 # Download dataset
@@ -109,7 +109,7 @@ with zipfile.ZipFile('elliptic-data-set.zip', 'r') as z:
 
 ### Local setup
 ```bash
-git clone https://github.com/YOUR_USERNAME/bitcoin-fraud-gnn.git
+git clone https://github.com/MY_USERNAME/bitcoin-fraud-gnn.git
 cd bitcoin-fraud-gnn
 pip install -r requirements.txt
 jupyter notebook
@@ -153,21 +153,21 @@ GraphSAGE with:
 - **Optimiser:** Adam (lr=1e-3, weight decay=5e-4)
 - **Scheduler:** ReduceLROnPlateau (patience=10, factor=0.5)
 - **Epochs:** 200
-- **Split:** Temporal — train on steps 1–34, test on 35–49
+- **Split:** Temporal (train on steps 1–34, test on 35–49)
 
 ### Key Findings
 
-**1. Fraud is structurally organised**
-Illicit nodes show near-perfect feature correlation — consistent with automated fraud scripts or coordinated laundering operations.
+**1. Fraud is structurally organized:**
+Illicit nodes show near-perfect feature correlation which is consistent with automated fraud scripts or coordinated laundering operations.
 
-**2. Fraud clusters temporally**
+**2. Fraud clusters temporally:**
 Six burst windows identified (steps 9, 13, 20, 28, 29, 32). Step 13 shows the highest illicit rate at 35%.
 
-**3. Fraud propagates deliberately**
-35.57% of nodes that receive funds from illicit nodes become illicit themselves at the next time step — 3.5× the base rate. Peak propagation of 84% at step 29 is consistent with layering in money laundering.
+**3. Fraud propagates deliberately:**
+35.57% of nodes that receive funds from illicit nodes become illicit themselves at the next time step of 3.5× the base rate. Peak propagation of 84% at step 29 is consistent with layering in money laundering.
 
-**4. GNN dramatically expands detection**
-88,234 previously-unknown wallets identified as high-risk — a 1,971% increase in detectable suspicious activity.
+**4. GNN dramatically expands detection:**
+88,234 previously unknown wallets identified as high-risk at a 1,971% increase in detectable suspicious activity.
 
 ---
 
@@ -175,14 +175,14 @@ Six burst windows identified (steps 9, 13, 20, 28, 29, 32). Step 13 shows the hi
 
 The interactive dashboard is a self-contained HTML file requiring no server:
 
-- **Model performance gauges** — AUC, Recall, F1, Average Precision
-- **Interactive network graph** — 500 highest-risk nodes, coloured by class, top-10 in gold
-- **Node detail panel** — click any node to see its full risk profile
-- **Ranking table** — top-20 nodes by GNN risk score
-- **Combined timeline** — confirmed + predicted illicit by time step
-- **Burst detection chart** — illicit rate with statistical anomaly flagging
-- **Class filter** — filters all components simultaneously
-- **Footer** — project attribution and key metrics
+- **Model performance gauges:** AUC, Recall, F1, Average Precision
+- **An interactive network graph:** 500 highest-risk nodes, colored by class, top 10 in gold
+- **Node detail panel:** click any node to see its full risk profile
+- **Ranking table:** listed the top 20 nodes by GNN risk score
+- **Combined timeline:** confirmed + predicted illicit by time step
+- **Burst detection chart:** illicit rate with statistical anomaly flagging
+- **Class filter:** filters all components simultaneously
+- **Footer:** project attribution and key metrics
 
 ---
 
