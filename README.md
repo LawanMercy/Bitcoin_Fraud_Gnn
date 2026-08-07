@@ -198,6 +198,6 @@ The interactive dashboard is a self-contained HTML file requiring no server:
 ## Author
 
 **Opeyemi Mercy Lawan**  
-Bitcoin Transaction Network · Fraud Detection Research · 2025
+Bitcoin Transaction Network · Fraud Detection Research · 2026
 
-*This project was completed as part of a fraud analytics internship and extended into independent research.*
+*This project was completed as part of a fraud analytics personal project and extended into independent research.*
