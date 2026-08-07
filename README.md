@@ -72,7 +72,7 @@ bitcoin-fraud-gnn/
 │   └── Bitcoin_Network_Risk_Intelligence_Dashboard.html
 │
 └── report/
-    └── Compliance_Report_Bitcoin_Network.docx
+    └── Report_Bitcoin_Network_Risk_Intelligence.docx
 ```
 
 ---
